@@ -13,14 +13,19 @@ Another acronym for this is REACTO
 Read and rephrase the prompt to make sure you understand the question.<br>
     - What are the inputs and outputs?
     - What are the shape/form of the inputs and outputs?
-    - Do you have enough information to compute the outputs?
+    - Can the outputs be determined by the inputs? What if they can't (ie null values)?
     - How should you label the data that are part of this problem?
 
 2. **Examples**<br>
-Ask for examples of inputs and outputs.
+Ask for or create concrete examples of inputs and outputs.
+    - start with simple examples
+    - progress to more complex examples
+    - add on edge case examples (null values etc.)
+    - explore invalid inputs
 
 3. **Approach**<br>
 Outline your approach to the problem in words, pseudo code etc.
+
 4. **Code**<br>
 Code out your approach
 5. **Test** <br>
