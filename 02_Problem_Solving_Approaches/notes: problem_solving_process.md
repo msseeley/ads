@@ -13,7 +13,6 @@ Another acronym for this is REACTO
 Read and rephrase the prompt to make sure you understand the question.<br>
     - What are the inputs and outputs?
     - What are the shape/form of the inputs and outputs?
-    - Can the outputs be determined by the inputs? What if they can't (ie null values)?
     - How should you label the data that are part of this problem?
 
 2. **Examples**<br>
@@ -24,10 +23,14 @@ Ask for or create concrete examples of inputs and outputs.
     - explore invalid inputs
 
 3. **Approach**<br>
-Outline your approach to the problem in words, pseudo code etc.
+Break down your approach to the problem.
+    - can help to write pseudo code with broken down steps
+    - it's possible to discuss runtime here
 
 4. **Code**<br>
-Code out your approach
+Code out your approach.
+    - based on your approach/notes, code through the steps.
+
 5. **Test** <br>
 From your given test cases, work through a test or two to see if your code work
 6. **Optimize**<br> Go through your code and if you have time, figure out places to optimize the code or at least discuss ideas for optimization.
