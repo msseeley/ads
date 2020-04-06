@@ -84,7 +84,7 @@ function sumZero(array){
 
 ```
 
-### Right next to each other
+### Pointers next to each other
 - Prompt<br>
 _Implement a function called "countUniqueValues," which accepts a sorted array and counts the unique values in the array. There can be negative numbers in the array._
 
@@ -107,3 +107,5 @@ function countUniqueValues(array){
   return count
 }
 ```
+
+## **Sliding Window**
