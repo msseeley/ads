@@ -145,7 +145,7 @@ function maxSubArray(array, n){
 
 ```
 
-## Divide & Conqueor
+## Divide & Conquer
 _Dividing a data set into smaller pieces and then repeating a process with a subset of data_
 ### Example
 ### Binary Search
