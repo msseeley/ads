@@ -161,13 +161,13 @@ binarySearch([1,3,5,7], 4) // -1
 ```
 function binarySearch(array, n){
   let start = 0;
-  let end = array.length-1;
+  let end = array.length - 1;
   while(start <= end){
    const midpt = Math.floor((start+end)/2);
    const midVal = array[midpt];
    if(midVal === n) return midpt;
-   if(midVal > n) end = midpt-1;
-   else start = midpt+1;
+   if(midVal > n) end = midpt - 1;
+   else start = midpt + 1;
   }
   return -1;
 }
