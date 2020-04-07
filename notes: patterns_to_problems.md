@@ -144,3 +144,31 @@ function maxSubArray(array, n){
 }
 
 ```
+
+## Divide & Conqueor
+_Dividing a data set into smaller pieces and then repeating a process with a subset of data_
+### Example
+### Binary Search
+- Prompt<br>
+_Given a sorted array of integers and a number **n** to search for. Implement an alogrithm that will return the index value of the number or -1 if the number is not present in the array._
+
+- Test Cases:
+```
+binarySearch([1,2,3,4,5,6], 4) // 3
+binarySearch([1,2,3,4], 2) // 1
+binarySearch([1,3,5,7], 4) // -1
+```
+```
+function binarySearch(array, n){
+  let start = 0;
+  let end = array.length-1;
+  while(start <= end){
+   const midpt = Math.floor((start+end)/2);
+   const midVal = array[midpt];
+   if(midVal === n) return midpt;
+   if(midVal > n) end = midpt-1;
+   else start = midpt+1;
+  }
+  return -1;
+}
+```
