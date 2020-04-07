@@ -109,3 +109,38 @@ function countUniqueValues(array){
 ```
 
 ## **Sliding Window**
+Taking a view of an array or string which changes but doesn't re-iterate with the conditions of the problem.
+ - useful for keeping track of a subset of data
+
+### Example
+###  Max Subarray Sum
+- Prompt<br>
+_Implement a function which accepts an array of integers and a number called **n**. The function should calculate the subset, with the size of n integers, that sum to the largest posible amount. The subset should be of consecutive numbers present in the array._
+
+- Test Cases:
+```
+maxSubArray([1,2,5,2,8,1,5], 2)  // 10 (2 + 8)
+maxSubArray([1,2,5,2,8,1,5],4) // 17 (2 + 5 + 2 + 8)
+maxSubArray([4,2,1,6], 1) // 6 (6)
+maxSubArray([4,2,1,6,2], 4) // 13
+maxSubArray([]) // null
+```
+```
+function maxSubArray(array, n){
+  if(array.length < n) return null;
+  let maxSum = 0;
+  for(let i = 0; i < n; i++){
+    maxSum += array[i];
+  }
+
+  let tempSum = maxSum;
+  for(let j = n; j < array.length; j++){
+    // subtract the first idx of the old sub array sum, add the next value for the new subarray sum
+    tempSum = tempSum - array[j-num] + array[j];
+
+    maxSum = Math.max(tempSum, maxSum);
+  }
+  return maxSum;
+}
+
+```
