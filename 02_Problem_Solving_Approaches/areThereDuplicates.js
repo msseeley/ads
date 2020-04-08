@@ -18,3 +18,7 @@ Space: O(n) Time: O(n)
     - if they are not equal, then it's TRUE they have duplicates
     - if they are equal,, then it's FALSE that they have duplicates
 */
+
+function areThereDuplicates(...args) {
+  return Set(args).size !== args.length;
+}
