@@ -10,3 +10,17 @@ sameFrequency(3589578, 5879385) // true
 sameFrequency(22,222)// false
 */
 
+function sameFrequency(numA, numB) {
+  const strA = numA.toString();
+  const strB = numB.toString();
+  if (strA.length !== strB.length) return false;
+  const freq = {};
+  for (const val of strA) {
+    freq[val] = (freq[val] || 0) + 1;
+  }
+  for (const val of strB) {
+    if (!freq[val]) return false;
+    freq[val]--;
+  }
+  return true
+}
