@@ -11,11 +11,17 @@ Test Cases:
   minSubArrayLen([1, 2, 3], 35) //0
 
 APPROACH:
- - set working sum to the first value
- - set minLength to Infinity
- - pointers left and right starting at the beginning of the array
- - difference (size of the array) right - left +1
- -
+ - creating a window with pointers
+ - create pointers for left and right of the current subArray
+ - variables for workingSum (starts at first value array) and minLen(initially infinity)
+ - iterate through with pointers
+    - pointers move forward under different conditions
+      - left++ when the workingSum is >= n, which means sub array maybe able to shrink
+      - right++ when the workingSum is < n, which means the sub array needs to expand
+    - if the workingSum >= n the length of the current sub array should be calculated
+      - start - end + 1 (0 indexed)
+  - if the minLen === Infinity we've never found a sum that meets the criteria and return 0
+  - else return the minLen
 */
 
 function minSubArrayLen(array, n) {
