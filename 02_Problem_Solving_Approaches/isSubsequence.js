@@ -16,3 +16,17 @@ APPROACH
 - use pointer for first string that iterates up once that character has been found in the second
 - if we can iterate fully through the first string, then the first string is present in the second string
 */
+
+function isSubsequence(sub, str) {
+  if (sub.length > str.length) return false;
+  let subIdx = 0;
+  let strIdx = 0;
+  while (strIdx < str.length) {
+    const strChar = str[strIdx];
+    const subChar = sub[subIdx];
+    if (subIdx === sub.length) return true;
+    if (subChar === strChar) subIdx++
+    strIdx++
+  }
+  return false;
+}
