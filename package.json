@@ -1,0 +1,23 @@
+{
+  "name": "ads",
+  "version": "1.0.0",
+  "description": "algorithims and data structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msseeley/ads.git"
+  },
+  "author": "m s seeley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msseeley/ads/issues"
+  },
+  "homepage": "https://github.com/msseeley/ads#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  }
+}
