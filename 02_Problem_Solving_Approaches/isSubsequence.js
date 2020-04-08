@@ -25,8 +25,8 @@ function isSubsequence(sub, str) {
     const strChar = str[strIdx];
     const subChar = sub[subIdx];
     if (subIdx === sub.length) return true;
-    if (subChar === strChar) subIdx++
-    strIdx++
+    if (subChar === strChar) subIdx++;
+    strIdx++;
   }
   return false;
 }
