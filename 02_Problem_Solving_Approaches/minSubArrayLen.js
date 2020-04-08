@@ -11,7 +11,7 @@ Test Cases:
   minSubArrayLen([1, 2, 3], 35) //0
 
 APPROACH:
- - creating a window with pointers
+ - creating a window with pointers that contracts from the left or expands to the right
  - create pointers for left and right of the current subArray
  - variables for workingSum (starts at first value array) and minLen(initially infinity)
  - iterate through with pointers
