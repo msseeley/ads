@@ -32,7 +32,7 @@ function minSubArrayLen(array, n) {
   while (right < array.length && left < right) {
     if (minLen === 1) return 1;
     if (workingSum >= n) {
-      minLen = Math.min(minLen, (right - left + 1))
+      minLen = Math.min(minLen, (right - left + 1));
       workingSum -= array[left];
       left++;
     } else {
