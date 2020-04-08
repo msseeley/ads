@@ -11,4 +11,10 @@ Test Cases:
   areThereDuplicates(1, 1, 4, 5) // true
   areThereDuplicates('a', 'b', 'c') // false
 
+APPROACH:
+Space: O(n) Time: O(n)
+  - create a set to store arguments
+  - compare set size to arguments length
+    - if they are not equal, then it's TRUE they have duplicates
+    - if they are equal,, then it's FALSE that they have duplicates
 */
