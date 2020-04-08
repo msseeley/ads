@@ -10,4 +10,9 @@ Test cases
   isSubsequence('abc', 'abracadabra') //true
   isSubsequence('abc', 'cba') // false
 
+APPROACH
+- optimization check if the first string length is greater than the second return false
+- go through the characters of the strings
+- use pointer for first string that iterates up once that character has been found in the second
+- if we can iterate fully through the first string, then the first string is present in the second string
 */
