@@ -19,4 +19,15 @@ APPROACH
   - move end pointer to the left if the average is greater than the target average
 */
 
+function averagePair(array, target) {
+  let start = 0;
+  let end = array.length - 1;
+  while (start < end) {
+    const avg = (array[start] + array[end]) / 2;
+    if (avg === target) return true;
+    if (avg > target) start++;
+    else end--;
+  }
+  return false;
+}
 
