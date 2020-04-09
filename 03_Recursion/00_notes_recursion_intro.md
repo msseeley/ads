@@ -8,6 +8,7 @@
 - writing recursion iteratively
 - common issues
 - recusion with in helper functions
+- pure recursion
 
 # Definition
 A process, in this case a function, that calls itself.
