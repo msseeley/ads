@@ -7,8 +7,10 @@ Looking at _some_ common patterns in solutions or approaches to problem solving.
 - Sliding Window
 - Divide and Conqueor
 - Dynamic Programming
-- Greedy Algorithms
-- Backtracking
+- Greedy Algorithms*
+- Backtracking*
+
+* Covered later, to be updated
 
 ## **Frequency Counters**
 Using an object to count and store the frequencies a multiple pieces of data.
