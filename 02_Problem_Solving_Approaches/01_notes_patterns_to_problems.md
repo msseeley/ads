@@ -12,7 +12,7 @@ Looking at _some_ common patterns in solutions or approaches to problem solving.
 
 * Covered later, to be updated
 
-## **Frequency Counters**
+# **Frequency Counters**
 Using an object to count and store the frequencies a multiple pieces of data.
 - Often O (n)
 - Avoids using nested loops (O(n^2)) with arrays and strings
@@ -53,7 +53,7 @@ function same(array1, array2){
 }
 ```
 
-## **Multiple Pointers**
+# **Multiple Pointers**
 Using pointers to create multiple points of references in a linear structure like a linked list, array, string.
 
 ### Example
@@ -147,7 +147,7 @@ function maxSubArray(array, n){
 
 ```
 
-## Divide & Conquer
+# Divide & Conquer
 _Dividing a data set into smaller pieces and then repeating a process with a subset of data_
 ### Example
 ### Binary Search

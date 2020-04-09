@@ -1,12 +1,12 @@
 # **Built-In JS Data Structures & Methods Runtimes**
 
-# Contents
+## Contents
 - Understand Big O context of JS Objects & Arrays
 - Compare & Contrast Runtimes for DS and built-in methods
 
 
 
-## Big O & Objects
+# Big O & Objects
 _Clarification technically an Array is a kind of object. Object in this context is referring to the data structure with a key-value lookup._ <br><br>
 Objects are useful for storage of data where order doesn't matter and you need fast insertion and removal.
 - In JS objects function as a **hashmap**
@@ -27,7 +27,7 @@ Objects are useful for storage of data where order doesn't matter and you need f
 - Object.hasOwnProperty(property) &rarr; returns a boolean response to if it has the specified property as its own property (as opposed to inheriting it)
 
 
-## Big O & Arrays
+# Big O & Arrays
 _Clarification built-in arrays in Javascript are resize-able, which is not true of all arrays in programming languages. When we talk about arrays here, we're actually talking about is closer to what is often referred to as a Dynamic Array or Array List._ <br><br>
 Arrays are often useful because they can store data in a specific order.
 
