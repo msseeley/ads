@@ -51,3 +51,4 @@ function binarySearch(arr, target){
 
 Time Efficiency: O (log n)
 Space Efficiency: O (1)
+
