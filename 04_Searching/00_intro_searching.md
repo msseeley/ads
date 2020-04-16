@@ -26,3 +26,5 @@ function linearSearch(arr, target){
   return -1
 }
 ```
+Time efficiency: O (n)
+Space efficiency: O (1)
