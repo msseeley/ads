@@ -52,3 +52,22 @@ function binarySearch(arr, target){
 Time Efficiency: O (log n)
 Space Efficiency: O (1)
 
+# Naive String Search
+The 'naive' string search takes in two strings and finds out if the second string can be found in the first string. It applies two nested loops. The outter loop which goes through the first string and the inner loop to go over the second string. Staying in or breaking out of the inner loop is dependent on if the characters match. The number of matches is kept in a variable that increments up if the inner loop is able to complete.
+
+## Implementation
+```
+function stringSearch(strA, strB){
+  let count = 0;
+
+  for(let i = 0 ; i < strA.length; i++){
+    for(let j = 0;  j < strB.length; i++){
+      const a = strA[i+j];
+      const b = strB[j];
+      if(a !== b) break;
+      if (a === b && j === strB.length-1) count++
+    }
+  }
+  return count;
+}
+```
