@@ -71,3 +71,5 @@ function stringSearch(strA, strB){
   return count;
 }
 ```
+
+# KMP String Search
