@@ -67,3 +67,30 @@ Iteration 3
   4th) 7 <= 9  no swap [3, 5, 5, 7, 9]
 ```
 
+### Implementation
+
+```
+function bubbleSort(array){
+  let swapped = true;
+  let sortLength = array.length;
+  while(swapped){
+    swapped = false;
+    for(let i = 1; i < sortLength; i++){
+      if(array[i] < array[i-1]){
+        swap(array, i, i-1)
+        swapped = true;
+      }
+    }
+    sortLength--;
+  }
+  return array
+}
+
+function swap(array, idxA, idxB){
+  [array[idxA], array[idxB]] = [array[idxB], array[idxA]]
+}
+
+```
+
+Time Complexity: O (n^2)
+However, if the data is nearly sorted O(n)
