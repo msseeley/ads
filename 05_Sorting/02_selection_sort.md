@@ -55,3 +55,5 @@ function selectionSort(array){
 }
 
 ```
+Time Complexity: O (n^2)
+Can be more optimal than bubble sort if you want to minimize the number of swaps.
