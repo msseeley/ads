@@ -59,3 +59,5 @@ function swap(array, idxA, idxB){
 
 Time Complexity: O (n^2)
 However, if the data is nearly sorted O(n)
+
+Space Complexity: O (1)
