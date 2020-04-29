@@ -115,4 +115,6 @@ function mergeSort(array){
 ```
 
 Time Complexity: O (n log n)
+ - decompositions log n
+ - comparisons n
 Space Complexity: O (n)
