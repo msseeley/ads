@@ -51,16 +51,10 @@ function merge(a, b){
   const merged = [];
   let idxC = 0;
   let idxD = 0;
-  const longest = a.length >= b.length ? a : b;
-  const shortest = a.length >= b.length ? b : a;
-  while(idxC < longest.length){
-    if(idxD >= shortest.length){
-      merged.push(longest[idxC]);
-      idxC++;
-    }
-    else{
-      const valC = longest[idxC];
-      const valD = shortest[idxD];
+
+  while(idxC < a.length && idxD < b.length){
+    const valC = a[idxC];
+    const valD = b[idxD];
       if(valC <= valD){
         merged.push(valC);
         idxC++;
@@ -69,7 +63,14 @@ function merge(a, b){
         merged.push(valD);
         idxD++;
       }
-    }
+  }
+  while(idxC < a.length){
+    merged.push(a[idxC]);
+    idxC++;
+  }
+  while(idxD < b.length){
+    merged.push(b[idxD]);
+    idxD++;
   }
   return merged;
 }
