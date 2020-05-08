@@ -75,3 +75,11 @@ function quickSort(array, left = 0, right = array.length - 1){
 }
 
 ```
+
+## Time Complexity
+### Worst Case
+is O (n^2) which is when the pivot is routinely the largest or greatest number in the given array bounds (thus making the halving aspect of the recursion equivalent through iterating through each value). It's not very good with sorted data for example.
+### Best Case
+is O(n Logn) which is when the pivot is consistently the middle value in the given array bounds.
+### Average Case
+is O(n Logn)
