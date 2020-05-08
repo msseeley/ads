@@ -1,5 +1,5 @@
 # Merge Sort
-Splits an array into smaller and smaller elements until it is a single element. Orders the element and merges them back together in order--recursion here can be useful.
+Splits an array into smaller and smaller elements until it is a single element. Orders the elements based on simple greater than less than comparison from each array in the pair, and then merges them back together in order--recursion here can be useful.
 
 ### Example
 Merge sort can be broken up into two functions. A function that handles the merging to two arrays and a function that handles the recursive aspect of building up an entirely merged array.
@@ -45,7 +45,7 @@ merged []
 
 merged = [1, 3, 4, 5, 6, 8, 9, 10, 11]
 ```
-### Implementation Merging Two Sorted Arrays
+## Implementation Merging Two Sorted Arrays
 ```
 function merge(a, b){
   const merged = [];
