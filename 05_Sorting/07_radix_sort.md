@@ -30,4 +30,52 @@ third iteration looking @ 100s place
                   0             1  2   3 4 5 6 7 8 9
   new array = [1, 9, 12, 25, 254]
 
-return new array [1, 9, 12, 25, 254]
+  return new array [1, 9, 12, 25, 254]
+
+## Implementation
+Radix sort employs three helper functions to break down being able to count the digits in a number,  finding the largest digit count, get a digit at a particular place.
+
+### Get a Digit at a particular place
+```
+function getDigit(num, place){
+  return Math.floor(Math.abs(num)/Math.pow(10, place)) %10;
+}
+```
+### Finding the largest digit count
+Asks 10 to what power (floored to avoid decimals) gives us this number? And then adds on 1 to account for the placement of the digit (10s ,100s, 1s etc place).
+```
+function digitCount(num){
+  if(num === 0) return 1;
+  //log10(0) = -Infinity
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+}
+```
+### most digits
+```
+function mostDigits(nums){
+  let max = 0;
+  for(let i = 0; i<nums.length; i++){
+    max = Math.max(digitCount(nums[i]), max)
+  }
+  return max;
+}
+```
+
+### radix sort
+
+```
+function radixSort(nums){
+  const iterations = mostDigits(nums);
+  let sorted = [];
+  for(let i = 0; i < iterations; i++){
+    let buckets = Array.from({length:10}, () => []);
+    for(let k = 0; k < nums.length; k++){
+      const num = nums[k];
+      const digit = getDigit(num, i);
+      buckets[digit].push(num);
+    }
+    sorted = [].concat(...buckets);
+  }
+  return sorted;
+}
+```
