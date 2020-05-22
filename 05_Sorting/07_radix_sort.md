@@ -78,3 +78,10 @@ function radixSort(nums){
   return nums;
 }
 ```
+
+Time Complexity: O (nk)
+The length of the array and k the number of digits in the numbers.
+
+Some argue that O (nlogn), if all the digits are unique.
+
+
