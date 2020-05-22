@@ -66,7 +66,6 @@ function mostDigits(nums){
 ```
 function radixSort(nums){
   const iterations = mostDigits(nums);
-  let sorted = [];
   for(let i = 0; i < iterations; i++){
     let buckets = Array.from({length:10}, () => []);
     for(let k = 0; k < nums.length; k++){
@@ -74,8 +73,8 @@ function radixSort(nums){
       const digit = getDigit(num, i);
       buckets[digit].push(num);
     }
-    sorted = [].concat(...buckets);
+    nums = [].concat(...buckets);
   }
-  return sorted;
+  return nums;
 }
 ```
