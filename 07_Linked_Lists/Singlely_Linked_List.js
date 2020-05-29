@@ -71,6 +71,27 @@ class SinglelyLinkedList {
     return currNode;
   }
 
+  set(value, position) {
+    const foundNode = this.get(position);
+    if (foundNode) {
+      foundNode.value = value;
+      return true;
+    }
+    return false;
+  }
+
+  insert(value, position) {
+    if (position < 0 || position > this.length) return false;
+    if (position === 0) return !!this.unshift(value);
+    if (position === this.length) return !!this.push(value);
+    const prevNode = this.get(position - 1);
+    const positionNode = prevNode.next;
+    const newNode = new Node(value);
+    newNode.next = positionNode;
+    prevNode.next = newNode;
+    this.length++;
+    return true;
+  }
 }
 
 
