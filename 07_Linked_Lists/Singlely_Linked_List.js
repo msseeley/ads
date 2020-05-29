@@ -59,11 +59,20 @@ class SinglelyLinkedList {
     this.length++;
     return this;
   }
-  get() {
-
+  //0 indexed
+  get(position) {
+    if (position > this.length - 1 || position < 0) return;
+    let currPosition = 0;
+    let currNode = this.head;
+    while (currPosition < position) {
+      currNode = currNode.next;
+      currPosition++;
+    }
+    return currNode;
   }
 
 }
 
 
 const list = new SinglelyLinkedList();
+
