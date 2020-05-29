@@ -43,6 +43,26 @@ class SinglelyLinkedList {
     this.length--;
     return removed;
   }
+  shift() {
+    if (this.head === null) return;
+    if (this.head === this.tail) {
+      this.tail = null;
+    }
+    const shifted = this.head;
+    this.head = this.head.next;
+    this.length--;
+    return shifted;
+  }
+
 }
 
 
+const list = new SinglelyLinkedList();
+list.push(1)
+list.push(2)
+list.push(3)
+console.log(list)
+list.shift()
+list.shift()
+list.shift()
+console.log(list)
