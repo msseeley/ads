@@ -45,24 +45,25 @@ class SinglelyLinkedList {
   }
   shift() {
     if (this.head === null) return;
-    if (this.head === this.tail) {
-      this.tail = null;
-    }
+    if (this.head === this.tail) this.tail = null;
     const shifted = this.head;
     this.head = this.head.next;
     this.length--;
     return shifted;
+  }
+  unshift(value) {
+    const node = new Node(value);
+    if (!this.head) this.tail = node;
+    node.next = this.head;
+    this.head = node;
+    this.length++;
+    return this;
+  }
+  get() {
+
   }
 
 }
 
 
 const list = new SinglelyLinkedList();
-list.push(1)
-list.push(2)
-list.push(3)
-console.log(list)
-list.shift()
-list.shift()
-list.shift()
-console.log(list)
