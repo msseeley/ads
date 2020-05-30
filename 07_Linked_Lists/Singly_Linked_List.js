@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class SinglelyLinkedList {
+class SinglyLinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
@@ -122,7 +122,7 @@ class SinglelyLinkedList {
 }
 
 
-const list = new SinglelyLinkedList();
+const list = new SinglyLinkedList();
 list.push(1)
 list.push(2)
 list.push(3)
