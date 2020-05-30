@@ -75,25 +75,58 @@ class SinglelyLinkedList {
     const foundNode = this.get(position);
     if (foundNode) {
       foundNode.value = value;
-      return true;
+      return foundNode;
     }
-    return false;
+    return;
   }
 
   insert(value, position) {
-    if (position < 0 || position > this.length) return false;
-    if (position === 0) return !!this.unshift(value);
-    if (position === this.length) return !!this.push(value);
+    if (position < 0 || position > this.length) return;
+    if (position === 0) return this.unshift(value);
+    if (position === this.length) return this.push(value);
     const prevNode = this.get(position - 1);
     const positionNode = prevNode.next;
     const newNode = new Node(value);
     newNode.next = positionNode;
     prevNode.next = newNode;
     this.length++;
-    return true;
+    return this;
+  }
+
+  remove(position) {
+    if (position === this.length) return this.pop();
+    if (position === 0) return this.shift();
+    if (position < 0 || position > this.length) return;
+    const prevNode = this.get(position - 1);
+    const toRemove = prevNode.next;
+    prevNode.next = toRemove.next;
+    this.length--;
+    return this;
+  }
+  // a -> b -> c
+  // a ->  b -> c -> d -> e
+
+  reverse() {
+    let curr = this.head;
+    this.head = this.tail;
+    this.tail = curr;
+    let prev = null
+    while (curr) {
+      let next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
+    }
+    return this;
   }
 }
 
 
 const list = new SinglelyLinkedList();
-
+list.push(1)
+list.push(2)
+list.push(3)
+list.push(4)
+console.log(list);
+list.reverse();
+console.log(list)
