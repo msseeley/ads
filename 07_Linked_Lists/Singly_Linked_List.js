@@ -77,7 +77,6 @@ class SinglyLinkedList {
       foundNode.value = value;
       return foundNode;
     }
-    return;
   }
 
   insert(value, position) {
