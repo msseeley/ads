@@ -103,8 +103,6 @@ class SinglyLinkedList {
     this.length--;
     return this;
   }
-  // a -> b -> c
-  // a ->  b -> c -> d -> e
 
   reverse() {
     let curr = this.head;
@@ -121,12 +119,3 @@ class SinglyLinkedList {
   }
 }
 
-
-const list = new SinglyLinkedList();
-list.push(1)
-list.push(2)
-list.push(3)
-list.push(4)
-console.log(list);
-list.reverse();
-console.log(list)
