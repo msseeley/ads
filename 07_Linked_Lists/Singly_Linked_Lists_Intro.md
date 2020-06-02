@@ -5,8 +5,12 @@ A list of ordered data. The list itself contains a head, tail, and length proper
 - head and tail really serve and endpoints and help specify inwhich direction the pointers are going.
 
 # Utility
-- useful for insertion and deletion
+- useful for insertion and deletion at the beginning
   - compared to in an array where every other piece of data has to be re-indexed
 
-
+# Big O Notation
+**Insertion** O (1)
+**Removal** O(1) removing from the beginning, O(n) elsewhere.
+**Searching** O(n)
+**Access** O(n)
 
