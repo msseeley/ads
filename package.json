@@ -4,7 +4,7 @@
   "description": "algorithims and data structures",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
