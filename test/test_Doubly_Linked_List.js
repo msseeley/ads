@@ -72,12 +72,19 @@ describe('Doubly Linked List Class', function () {
 
   describe('pop method', function () {
     const list = new DoublyLinkedList();
-    ['A', 'B', 'C'].forEach(val => list.push(val));
+    ['A', 'B', 'C', 'D', 'E'].forEach(val => list.push(val));
+    let popped;
     it('decrements its length with every popped node', function () {
-      expect(list.length).to.equal(3);
-      list.pop();
-      expect(list.length).to.equal(2);
+      expect(list.length).to.equal(5);
+      popped = list.pop();
+      expect(list.length).to.equal(4);
     });
+    it('reassigns tail', function () {
+      expect(list.tail.value).to.equal('D');
+    })
+    it('returns the popped value', function () {
+      expect(popped).to.eql({ value: 'E', prev: null, next: null });
+    })
   })
 })
 

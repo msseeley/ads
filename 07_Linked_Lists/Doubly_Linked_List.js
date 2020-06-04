@@ -33,10 +33,12 @@ class DoublyLinkedList {
       this.tail = null;
       return this;
     }
+    const popped = this.tail;
     this.tail = this.tail.prev;
     this.tail.next = null;
+    popped.prev = null;
     this.length--;
-    return this;
+    return popped;
   }
   shift() {
     const shifted = this.head;
