@@ -227,10 +227,15 @@ describe('Doubly Linked List Class', function () {
       list_7.insert(1, 0);
       expect(list_7.get(0)).to.not.equal(original);
     });
+    it('increments the length of the list', function () {
+      expect(list_7.length).to.equal(10);
+    })
   })
 
-  describe(remove, function () {
-    it('', function () { });
+  describe('remove', function () {
+    it('', function () {
+
+    });
   })
 });
 

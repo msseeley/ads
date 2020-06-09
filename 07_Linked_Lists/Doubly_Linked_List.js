@@ -93,7 +93,7 @@ class DoublyLinkedList {
       return this.push(value);
     }
     if (position === 0) {
-      return this.shift(value)
+      return this.unshift(value);
     }
     const newNode = new Node(value);
     const found = this.get(position);
@@ -102,6 +102,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
   remove(position) {
     if (position < 0 || position >= this.length) return;
     const removed = this.get(position);
