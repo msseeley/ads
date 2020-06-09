@@ -92,6 +92,9 @@ class DoublyLinkedList {
     if (position === this.length) {
       return this.push(value);
     }
+    if (position === 0) {
+      return this.shift(value)
+    }
     const newNode = new Node(value);
     const found = this.get(position);
     newNode.next = found;

@@ -136,6 +136,64 @@ describe('Doubly Linked List Class', function () {
       expect(list_4.length).to.equal(3);
     })
   });
+
+  describe('get', function () {
+    let list_5 = new DoublyLinkedList();
+    ['O', 'P', 'Q', 'R', 'S'].forEach(val => list_5.push(val));
+    const gotten = list_5.get(2);
+
+    it('returns the value at the index specified', function () {
+      expect(gotten).to.be.a('object');
+      expect(gotten.value).to.equal('Q');
+    })
+    it('returns undefined for indexes that do not exist', function () {
+      expect(list_5.get(-2)).to.equal(undefined);
+      expect(list_5.get(7)).to.equal(undefined);
+    })
+    it('does not affect the length or order of the list', function () {
+      expect(list_5.length).to.equal(5);
+      expect(gotten.next.value).to.equal('R');
+      expect(gotten.prev.value).to.equal('P');
+    })
+  })
+
+  describe('set', function () {
+    let list_6 = new DoublyLinkedList();
+    ['T', 'U', 'V'].forEach(val => list_6.push(val));
+    const previousValue = list_6.get(1).value;
+    const previousNode = list_6.get(1);
+    it('sets the value of the position', function () {
+      list_6.set(1, 'Z');
+      const currentValue = list_6.get(1).value;
+      expect(previousValue).to.not.equal(currentValue);
+    });
+    it('keeps the same node and does not replace it with another node', function () {
+      const currentNode = list_6.get(1);
+      expect(previousNode).to.equal(currentNode);
+    });
+    it('returns undefined if set index is not valid', function () {
+      expect(list_6.get(-2, 'Y')).to.equal(undefined);
+    })
+  })
+
+  describe('insert', function () {
+    let list_7 = new DoublyLinkedList();
+    [1, 2, 3, 4, 5, 6].forEach(val => list_7.push(val));
+    it('inserts the node at the correct position', function () {
+      list_7.insert(8, 6);
+      list_7.insert(7, 6);
+      expect(list_7.get(7).value).to.equal(8);
+      expect(list_7.get(6).value).to.equal(7);
+      list_7.insert(12, 3);
+      expect(list_7.get(2).next.value).to.equal(12);
+      expect(list_7.get(4).value).to.equal(4);
+    })
+    it('inserts a new node into the list', function () {
+      const original = list_7.get(0);
+      list_7.insert(1, 0);
+      expect(list_7.get(0)).to.not.equal(original);
+    })
+  })
 });
 
 
