@@ -235,14 +235,21 @@ describe('Doubly Linked List Class', function () {
 
   describe('remove', function () {
     let list8 = new DoublyLinkedList();
+    const prevLength = list8.length;
     [10, 11, 12, 13, 14].forEach(val => list8.push(val))
-
+    list8.remove(0);
     it('decrements the length of the list', () => {
-
+      expect(list8.length).to.not.equal(prevLength);
+      expect(list8.length).to.equal(4);
     });
 
     it('removes properly reassigns next and prev pointers of remaining nodes', () => {
-
+      const before = list8.get(2);
+      list8.remove(2); //[11, 12,  14]
+      const after = list8.get(2);
+      expect(before).to.not.equal(after);
+      expect(before.prev).to.equal(after.prev);
+      expect(before.prev.next).to.equal(after);
     });
   });
 });
