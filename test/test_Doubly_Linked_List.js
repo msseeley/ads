@@ -252,6 +252,28 @@ describe('Doubly Linked List Class', function () {
       expect(before.prev.next).to.equal(after);
     });
   });
+
+  describe('reverse', () => {
+    const list8 = new DoublyLinkedList();
+    ['C', 'O', 'O', 'L', ' ', 'B', 'E', 'A', 'N', 'S'].forEach(val => list8.push(val));
+    const head = list8.head;
+    const tail = list8.tail;
+    list8.reverse();
+    it('reassigns the head and the tail', () => {
+      expect(list8.head).to.equal(tail);
+      expect(list8.tail).to.equal(head);
+    });
+    it('reverses pointers and positions accordingly', () => {
+      const space = list.get(5);
+      const B = list8.get(4);
+      const E = list8.get(3);
+      expect(space.value).to.equal(' ');
+      expect(B.value).to.equal('B');
+      expect(E.value).to.equal('E');
+      expect(B.prev).to.equal(E);
+      expect(B.next).to.equal(space);
+    });
+  })
 });
 
 

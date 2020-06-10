@@ -115,21 +115,8 @@ class DoublyLinkedList {
     return this;
   }
 
-  /*
-   <-p- node -n-> <-p- node -n-> <-p- node -n-> <-p- node -n->
-  */
   reverse() {
-    let curr = this.head;
-    this.head = this.tail;
-    this.tail = curr;
-    while (curr) {
-      let former = curr.prev;
-      let later = curr.next;
-      curr.prev = later;
-      curr.next = former;
-      curr = later;
-    }
-    return this;
+
   }
 }
 
