@@ -28,16 +28,16 @@ class DoublyLinkedList {
 
   pop() {
     if (this.length === 0) return;
+    const popped = this.tail;
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
       this.length--;
-      return this;
+    } else {
+      this.tail = this.tail.prev;
+      this.tail.next = null;
+      popped.prev = null;
     }
-    const popped = this.tail;
-    this.tail = this.tail.prev;
-    this.tail.next = null;
-    popped.prev = null;
     this.length--;
     return popped;
   }
