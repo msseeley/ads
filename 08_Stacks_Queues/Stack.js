@@ -1,17 +1,28 @@
+const DoublyLinkedList = require('../07_Linked_Lists/Doubly_Linked_List')
+
 class StackWithArray {
   constructor() {
     this.stack = [];
-    this.length = 0;
   }
   enqueue(val) {
     this.stack.push(val);
-    this.length++;
   }
   dequeue() {
-    this.length--;
     return this.stack.pop();
   }
 }
 
-module.exports = { StackWithArray }
+class StackWithLinkedList {
+  constructor() {
+    this.list = new DoublyLinkedList();
+  }
+  enqueue(val) {
+    this.list.push(val);
+  }
+  dequeue() {
+    return this.list.pop();
+  }
+}
+
+module.exports = { StackWithArray, StackWithLinkedList }
 

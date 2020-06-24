@@ -26,23 +26,24 @@ class SinglyLinkedList {
   }
 
   pop() {
+    if (!this.length) return;
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
-      return;
     };
-    let iterations = this.length;
     let node = this.head;
-    while (iterations > 2) {
+    for (let i = 0; i < this.length - 1; i++) {
       node = node.next;
-      iterations--;
+      console.log('node.value', node.value)
     }
-    const removed = node.next;
+    console.log(node)
+    const removed = this.tail;
     this.tail = node;
     this.tail.next = null;
     this.length--;
     return removed;
   }
+
   shift() {
     if (this.head === null) return;
     if (this.head === this.tail) this.tail = null;
@@ -118,3 +119,4 @@ class SinglyLinkedList {
   }
 }
 
+module.exports = SinglyLinkedList;
