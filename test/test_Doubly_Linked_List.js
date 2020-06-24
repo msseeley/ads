@@ -208,7 +208,7 @@ describe('Doubly Linked List Class', function () {
 
   });
 
-  describe.only('insert', function () {
+  describe('insert', function () {
     let list7 = new DoublyLinkedList();
     [1, 2, 3, 4, 5, 6].forEach(val => list7.push(val));
 

@@ -118,6 +118,19 @@ class DoublyLinkedList {
     this.length--;
     return removed;
   }
+  reverse() {
+    let curr = this.head;
+    this.head = this.tail;
+    this.tail = curr;
+    for (let i = 0; i < this.length; i++) {
+      let before = curr.prev;
+      let after = curr.next;
+      curr.prev = after;
+      curr.next = before;
+      curr = curr.prev;
+    }
+    return this;
+  }
 }
 
 module.exports = DoublyLinkedList;
