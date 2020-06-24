@@ -113,6 +113,9 @@ class DoublyLinkedList {
     const next = removed.next;
     prev.next = next;
     next.prev = prev;
+    removed.next = null;
+    removed.prev = null;
+    this.length--;
     return this;
   }
 
