@@ -193,7 +193,7 @@ describe('Doubly Linked List Class', function () {
 
     it('sets the value of the position', function () {
       list6.set(1, 'Z');
-      const currentValue = list6.get(1).value;
+      const currentValue = list6.set(1).value;
       expect(previousValue).to.not.equal(currentValue);
     });
 

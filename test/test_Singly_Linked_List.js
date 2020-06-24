@@ -183,7 +183,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe.only('set', function () {
+  describe('set', function () {
     let list6 = new SinglyLinkedList();
     ['T', 'U', 'V'].forEach(val => list6.push(val));
     const previousValue = list6.get(1).value;
