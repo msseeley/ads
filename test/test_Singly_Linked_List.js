@@ -106,7 +106,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe.only('shift', function () {
+  describe('shift', function () {
     let list3 = new SinglyLinkedList();
 
     ['F', 'G', 'H', 'I', 'J'].forEach(val => list3.push(val));
@@ -183,7 +183,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe('set', function () {
+  describe.only('set', function () {
     let list6 = new SinglyLinkedList();
     ['T', 'U', 'V'].forEach(val => list6.push(val));
     const previousValue = list6.get(1).value;
@@ -191,7 +191,7 @@ describe('Singly Linked List Class', function () {
 
     it('sets the value of the position', function () {
       list6.set(1, 'Z');
-      const currentValue = list6.get(1).value;
+      const currentValue = list6.set(1).value;
       expect(previousValue).to.not.equal(currentValue);
     });
 
