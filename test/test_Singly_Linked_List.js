@@ -51,7 +51,7 @@ describe('Singly Linked List Class', function () {
     const list1 = new SinglyLinkedList();
     it('assigns head and tail to first added node', function () {
       list1.push('A');
-      const node = { value: 'A', next: null, prev: null }
+      const node = { value: 'A', next: null }
       expect(list1.head).to.eql(node);
       expect(list1.tail).to.eql(node);
     });
@@ -61,7 +61,6 @@ describe('Singly Linked List Class', function () {
       expect(list1.head.value).to.equal('A');
       expect(list1.head.next).to.equal(list1.tail);
       expect(list1.tail.value).to.equal('B');
-      expect(list1.tail.prev).to.equal(list1.head);
     });
 
     it('increments its length with every pushed node', function () {
@@ -72,7 +71,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe('pop', function () {
+  describe.only('pop', function () {
     let list2 = new SinglyLinkedList();
 
     ['A', 'B', 'C', 'D', 'E'].forEach(val => list2.push(val));
@@ -89,7 +88,7 @@ describe('Singly Linked List Class', function () {
     });
 
     it('returns the popped value', function () {
-      expect(popped).to.eql({ value: 'E', prev: null, next: null });
+      expect(popped).to.eql({ value: 'E', next: null });
     });
 
     it('returns undefined if list is empty', function () {
@@ -115,7 +114,7 @@ describe('Singly Linked List Class', function () {
     const shifted = list3.shift();
 
     it('returns the shifted node', function () {
-      expect(shifted).to.eql({ value: 'F', prev: null, next: null });
+      expect(shifted).to.eql({ value: 'F', next: null });
     });
 
     it('reassigns head', function () {
@@ -180,7 +179,6 @@ describe('Singly Linked List Class', function () {
     it('does not affect the length or order of the list', function () {
       expect(list5.length).to.equal(5);
       expect(gotten.next.value).to.equal('R');
-      expect(gotten.prev.value).to.equal('P');
     });
 
   });
@@ -244,12 +242,6 @@ describe('Singly Linked List Class', function () {
     });
 
     it('removes properly reassigns next and prev pointers of remaining nodes', () => {
-      const before = list8.get(2);
-      list8.remove(2); //[11, 12,  14]
-      const after = list8.get(2);
-      expect(before).to.not.equal(after);
-      expect(before.prev).to.equal(after.prev);
-      expect(before.prev.next).to.equal(after);
     });
   });
 
@@ -270,7 +262,6 @@ describe('Singly Linked List Class', function () {
       expect(space.value).to.equal('_');
       expect(B.value).to.equal('B');
       expect(E.value).to.equal('E');
-      expect(B.prev).to.equal(E);
       expect(B.next).to.equal(space);
     });
   })

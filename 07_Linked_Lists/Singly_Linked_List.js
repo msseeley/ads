@@ -27,19 +27,18 @@ class SinglyLinkedList {
 
   pop() {
     if (!this.length) return;
+    const removed = this.tail;
     if (this.length === 1) {
       this.head = null;
       this.tail = null;
-    };
-    let node = this.head;
-    for (let i = 0; i < this.length - 1; i++) {
-      node = node.next;
-      console.log('node.value', node.value)
+    } else {
+      let node = this.head
+      for (let i = 0; node.next !== this.tail; i++) {
+        node = node.next;
+      }
+      this.tail = node;
+      this.tail.next = null;
     }
-    console.log(node)
-    const removed = this.tail;
-    this.tail = node;
-    this.tail.next = null;
     this.length--;
     return removed;
   }
