@@ -118,6 +118,7 @@ class DoublyLinkedList {
     this.length--;
     return removed;
   }
+
   reverse() {
     let curr = this.head;
     this.head = this.tail;
