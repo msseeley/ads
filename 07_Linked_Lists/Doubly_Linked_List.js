@@ -72,12 +72,12 @@ class DoublyLinkedList {
 
   get(position) {
     if (position >= this.length || position < 0) return;
-    //could add logic to start at tail or head
-    let currPosition = 0;
-    let currNode = this.head;
-    while (currPosition < position) {
-      currNode = currNode.next;
-      currPosition++;
+    let currNode = Math.floor(this.length / 2) > position ? this.head : this.tail;
+    let currPosition = Math.floor(this.length / 2) > position ? 0 : this.length - 1;
+    let direction = Math.floor(this.length / 2) > position ? 'next' : 'prev';
+    while (currPosition !== position) {
+      currNode = currNode[direction];
+      direction === 'next' ? currPosition++ : currPosition--;
     }
     return currNode;
   }
@@ -125,10 +125,10 @@ class DoublyLinkedList {
       let next = curr.next;
       curr.next = prev;
       curr.prev = next;
-      console.log(`${curr.value}`, curr);
+      // console.log(`${curr.value}`, curr);
       curr = curr.prev;
     }
-    console.log('REVERSED =>  ', this)
+    // console.log('REVERSED =>  ', this)
     return this;
   }
 }
