@@ -116,7 +116,7 @@ class DoublyLinkedList {
     removed.next = null;
     removed.prev = null;
     this.length--;
-    return this;
+    return removed;
   }
 
   reverse() {
