@@ -88,7 +88,6 @@ class DoublyLinkedList {
       found.value = value;
       return this;
     }
-    return;
   }
 
   insert(value, position) {
