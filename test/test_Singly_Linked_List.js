@@ -71,7 +71,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe.only('pop', function () {
+  describe('pop', function () {
     let list2 = new SinglyLinkedList();
 
     ['A', 'B', 'C', 'D', 'E'].forEach(val => list2.push(val));
@@ -106,7 +106,7 @@ describe('Singly Linked List Class', function () {
 
   });
 
-  describe('shift', function () {
+  describe.only('shift', function () {
     let list3 = new SinglyLinkedList();
 
     ['F', 'G', 'H', 'I', 'J'].forEach(val => list3.push(val));

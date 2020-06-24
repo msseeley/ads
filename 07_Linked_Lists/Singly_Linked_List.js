@@ -44,13 +44,15 @@ class SinglyLinkedList {
   }
 
   shift() {
-    if (this.head === null) return;
-    if (this.head === this.tail) this.tail = null;
+    if (!this.length) return;
+    if (this.length === 1) this.tail = null;
     const shifted = this.head;
     this.head = this.head.next;
+    shifted.next = null;
     this.length--;
     return shifted;
   }
+
   unshift(value) {
     const node = new Node(value);
     if (!this.head) this.tail = node;
