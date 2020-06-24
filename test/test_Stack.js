@@ -1,7 +1,7 @@
 const expect = require('chai').expect;
 const { StackWithArray, StackWithLinkedList } = require('../08_Stacks_Queues/Stack');
 
-describe.only("Stack", () => {
+describe("Stack", () => {
   describe("Array Implmentation", () => {
     const stack = new StackWithArray();
 
