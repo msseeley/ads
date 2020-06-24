@@ -72,9 +72,9 @@ class DoublyLinkedList {
 
   get(position) {
     if (position >= this.length || position < 0) return;
-    let currNode = Math.floor(this.length / 2) > position ? this.head : this.tail;
-    let currPosition = Math.floor(this.length / 2) > position ? 0 : this.length - 1;
-    let direction = Math.floor(this.length / 2) > position ? 'next' : 'prev';
+    let currNode = Math.floor(this.length / 2) >= position ? this.head : this.tail;
+    let currPosition = Math.floor(this.length / 2) >= position ? 0 : this.length - 1;
+    let direction = Math.floor(this.length / 2) >= position ? 'next' : 'prev';
     while (currPosition !== position) {
       currNode = currNode[direction];
       direction === 'next' ? currPosition++ : currPosition--;
