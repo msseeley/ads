@@ -10,7 +10,16 @@ A list of ordered data. The list itself contains a head, tail, and length proper
 
 # Big O Notation
 **Insertion** O (1)
-**Removal** O(1) removing from the beginning, O(n) elsewhere.
+**Removal**
+O(1) removing from the beginning,
+O(n) elsewhere.
 **Searching** O(n)
 **Access** O(n)
 
+# Doubly Linked List
+Similar to singly linked list, except each node has two pointers. One pointer pointing to the previous node and one pointer pointing to the next node.
+The extra pointer does take up space.
+**Insertion** O (1)
+**Removal** O(1) removing from the beginning, O(n) elsewhere.
+**Searching** O(n), optimized it is O (n/2) but still slightly better singly linked list.
+**Access** O(n)
