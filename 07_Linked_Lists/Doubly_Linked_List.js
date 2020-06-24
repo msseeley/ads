@@ -40,6 +40,7 @@ class DoublyLinkedList {
     this.length--;
     return popped;
   }
+
   shift() {
     if (!this.head) return;
     const shifted = this.head;
@@ -68,6 +69,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
+
   get(position) {
     if (position >= this.length || position < 0) return;
     //could add logic to start at tail or head
