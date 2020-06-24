@@ -81,11 +81,14 @@ class DoublyLinkedList {
     }
     return currNode;
   }
+
   set(position, value) {
-    if (position < 0 || position >= this.length) return;
     const found = this.get(position);
-    found.value = value;
-    return this;
+    if (found) {
+      found.value = value;
+      return this;
+    }
+    return;
   }
 
   insert(value, position) {

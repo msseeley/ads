@@ -185,7 +185,7 @@ describe('Doubly Linked List Class', function () {
 
   });
 
-  describe('set', function () {
+  describe.only('set', function () {
     let list6 = new DoublyLinkedList();
     ['T', 'U', 'V'].forEach(val => list6.push(val));
     const previousValue = list6.get(1).value;
