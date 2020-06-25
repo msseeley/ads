@@ -2,12 +2,13 @@ class QueueWithArray {
   constructor() {
     this.queue = [];
   }
-  enqueue() {
-
+  enqueue(val) {
+    this.queue.push(val);
+    return this.queue.length;
   }
 
   dequeue() {
-
+    return this.queue.shift();
   }
 }
 
@@ -24,11 +25,26 @@ class Queue {
     this.last = null;
     this.length = null;
   }
-  enqueue() {
 
+  enqueue(val) {
+    const node = new Node(val);
+    if (!this.first) {
+      this.first = node;
+      this.last = node;
+    } else {
+      this.last.next = node;
+      this.last = node;
+    }
+    this.length++;
+    return this.length;
   }
-  dequeue() {
 
+  dequeue() {
+    const removed = this.first;
+    this.first = this.first.next;
+    this.length--;
+    removed.next = null;
+    return removed;
   }
 }
 

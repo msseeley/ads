@@ -10,7 +10,7 @@ describe("Queue", () => {
       expect(arrayQueue.dequeue).to.be.a('function');
     });
 
-    it("can adds and retrieves data in FIFO manner", () => {
+    it("enqueues and dequeues data in FIFO manner", () => {
       arrayQueue.enqueue(1);
       expect(arrayQueue.queue.length).to.equal(1);
       expect(arrayQueue.dequeue()).to.equal(1);
