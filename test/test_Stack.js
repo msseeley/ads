@@ -5,42 +5,42 @@ describe("Stack", () => {
   describe("Array Implmentation", () => {
     const stack = new StackWithArray();
 
-    it("has methods: 'enqueue' and 'dequeue'", () => {
-      expect(stack.enqueue).to.be.a('function');
-      expect(stack.dequeue).to.be.a('function');
+    it("has methods: 'push' and 'pop'", () => {
+      expect(stack.push).to.be.a('function');
+      expect(stack.pop).to.be.a('function');
     });
 
-    it("can enqueue values", () => {
-      stack.enqueue('A');
-      expect(stack.dequeue()).to.equal('A')
-      stack.enqueue('B');
-      stack.enqueue('C');
-      expect(stack.dequeue()).to.equal('C');
+    it("can push values", () => {
+      stack.push('A');
+      expect(stack.pop()).to.equal('A')
+      stack.push('B');
+      stack.push('C');
+      expect(stack.pop()).to.equal('C');
     });
 
     it("return the last element added when dequeuing", () => {
-      expect(stack.dequeue()).to.equal('B');
+      expect(stack.pop()).to.equal('B');
     });
   });
 
   describe("Linked List Implementation", () => {
     const stack = new StackWithLinkedList();
 
-    it("has methods: 'enqueue' and 'dequeue'", () => {
-      expect(stack.enqueue).to.be.a('function');
-      expect(stack.dequeue).to.be.a('function');
+    it("has methods: 'push' and 'pop'", () => {
+      expect(stack.push).to.be.a('function');
+      expect(stack.pop).to.be.a('function');
     });
 
-    it("can enqueue values", () => {
-      stack.enqueue('A');
-      expect(stack.dequeue().value).to.equal('A')
-      stack.enqueue('B');
-      stack.enqueue('C');
-      expect(stack.dequeue().value).to.equal('C');
+    it("can push values", () => {
+      stack.push('A');
+      expect(stack.pop().value).to.equal('A')
+      stack.push('B');
+      stack.push('C');
+      expect(stack.pop().value).to.equal('C');
     });
 
     it("return the last element added when dequeuing", () => {
-      expect(stack.dequeue().value).to.equal('B');
+      expect(stack.pop().value).to.equal('B');
     });
   });
 });

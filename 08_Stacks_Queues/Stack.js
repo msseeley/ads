@@ -4,10 +4,10 @@ class StackWithArray {
   constructor() {
     this.stack = [];
   }
-  enqueue(val) {
+  push(val) {
     this.stack.push(val);
   }
-  dequeue() {
+  pop() {
     return this.stack.pop();
   }
 }
@@ -16,10 +16,10 @@ class StackWithLinkedList {
   constructor() {
     this.list = new DoublyLinkedList();
   }
-  enqueue(val) {
+  push(val) {
     this.list.push(val);
   }
-  dequeue() {
+  pop() {
     return this.list.pop();
   }
 }
