@@ -2,6 +2,13 @@ class QueueWithArray {
   constructor() {
     this.queue = [];
   }
+  enqueue() {
+
+  }
+
+  dequeue() {
+
+  }
 }
 
 class Node {
@@ -16,6 +23,12 @@ class Queue {
     this.first = null;
     this.last = null;
     this.length = null;
+  }
+  enqueue() {
+
+  }
+  dequeue() {
+
   }
 }
 
