@@ -40,6 +40,7 @@ class Queue {
   }
 
   dequeue() {
+    if (!this.length) return;
     const removed = this.first;
     this.first = this.first.next;
     this.length--;
