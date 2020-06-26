@@ -35,15 +35,7 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right).to.equal(null);
     });
     it("inserts subsequent nodes in the appropriate order", () => {
-      bst.insert(45);
-      bst.insert(59);
-      bst.insert(20);
-      bst.insert(5);
-      bst.insert(47);
-      bst.insert(78);
-      bst.insert(90);
-      bst.insert(6);
-      bst.insert(88);
+      [45, 59, 20, 5, 47, 78, 90, 6, 88].forEach(num => bst.insert(num));
       expect(bst.root.left.value).to.equal(45);
       expect(bst.root.left.right.value).to.equal(47);
       expect(bst.root.left.left.value).to.equal(20);
@@ -55,4 +47,12 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right.right.right.left.value).to.equal(88);
     });
   });
+  describe("contains method", () => {
+    const bst = new BinarySearchTree();
+    [12, 2, 1, 5, 19, 25, 17, 6].forEach(num => bst.insert(num));
+    it("returns a boolean for values that are or are not in the tree", () => {
+      expect(bst.contains(1)).to.equal(true);
+      expect(bst.contains(33)).to.equal(false);
+    });
+  })
 })

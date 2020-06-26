@@ -29,8 +29,14 @@ class BinarySearchTree {
     return this;
   }
 
-  contains() {
-
+  contains(val) {
+    // let current = this.root;
+    // while (current) {
+    //   if (current.value === value) return true;
+    //   let dir = current.value > value ? 'left' : 'right';
+    //   current = current[dir];
+    // }
+    // return false;
   }
 
   delete() {
