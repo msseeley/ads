@@ -19,3 +19,31 @@ Node A is a **parent** to Nodes B and C
   Nodes B and C are **siblings**
   Node B is a **parent** to Nodes D & E
     Nodes D and E is a **children** to Node B
+
+
+## Uses
+- the DOM
+- Network Routing
+- Abstract Syntax Trees for programming languages
+- AI machines
+- JSON parsing
+- etc.
+
+## Some types of Trees
+- Binary Trees
+- Heaps
+- B-Trees
+
+## Binary Trees
+Each node has a max of two children.
+
+## Binary Search Trees
+Binary Tree that is sorted in a particular order. Used to store data that can be compared and sorted in a particular fashion. Classically, this is numbers, but could be other things.
+Sorting order is everything greater than the root is stored on the right side and everything less than the root is stored on the left side. Each node's children, in micro, follows this same patter as well.
+
+## Searching a Binary Tree
+Ordering systm makes insertion and lookup much quicker.
+
+
+
+
