@@ -57,5 +57,20 @@ describe("Binary Search Tree", () => {
       expect(bst.contains(1)).to.equal(true);
       expect(bst.contains(33)).to.equal(false);
     });
+  });
+  describe("delete method", () => {
+    const bst = new BinarySearchTree();
+    [75, 20, 90, 85, 34, 18].forEach(num => bst.insert(num));
+    it("throws an error if the value doesn't exist", () => {
+      expect(() => bst.delete(10)).to.throw("node does not exist");
+    });
+    it("deletes the given node and ONLY the given node", () => {
+      bst.delete(18);
+      expect(bst.root.left.left).to.equal(null);
+      bst.delete(20);
+      expect(bst.root.left.value).to.equal(34);
+      bst.delete(90);
+      expect(bst.root.right.value).to.equal(85);
+    });
   })
 })
