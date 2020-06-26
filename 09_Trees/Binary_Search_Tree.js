@@ -20,6 +20,7 @@ class BinarySearchTree {
       let curr = this.root;
       let dir;
       while (curr) {
+        if (curr.value === value) throw Error("value already exists");
         dir = curr.value > value ? 'left' : 'right';
         if (curr[dir]) curr = curr[dir];
         else break;
@@ -29,14 +30,14 @@ class BinarySearchTree {
     return this;
   }
 
-  contains(val) {
-    // let current = this.root;
-    // while (current) {
-    //   if (current.value === value) return true;
-    //   let dir = current.value > value ? 'left' : 'right';
-    //   current = current[dir];
-    // }
-    // return false;
+  contains(value) {
+    let current = this.root;
+    while (current) {
+      if (current.value === value) return true;
+      let dir = current.value > value ? 'left' : 'right';
+      current = current[dir];
+    }
+    return false;
   }
 
   delete() {

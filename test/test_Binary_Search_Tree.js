@@ -46,6 +46,9 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right.right.right.value).to.equal(90);
       expect(bst.root.right.right.right.left.value).to.equal(88);
     });
+    it("throws error when insert value is a duplicate ", () => {
+      expect(() => bst.insert(50)).to.throw("value already exists");
+    })
   });
   describe("contains method", () => {
     const bst = new BinarySearchTree();
