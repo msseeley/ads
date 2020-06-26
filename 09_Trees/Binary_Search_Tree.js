@@ -15,11 +15,12 @@ class BinarySearchTree {
     const node = new Node(value);
     if (!this.root) {
       this.root = node;
-    } else {
+    }
+    else {
       let curr = this.root;
       let dir;
       while (curr) {
-        dir = curr.value > value ? "left" : "right";
+        dir = curr.value > value ? 'left' : 'right';
         if (curr[dir]) curr = curr[dir];
         else break;
       }
