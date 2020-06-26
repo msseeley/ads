@@ -8,7 +8,7 @@ class Node {
 
 class BinarySearchTree {
   constructor() {
-    // this.root = null;
+    this.root = null;
   }
 
   insert(value, curr = this.root) {
@@ -16,7 +16,31 @@ class BinarySearchTree {
     // let dir = curr.value > value ? 'left' : 'right';
     // curr = this.insert(value, curr[dir]);
   }
+
+  search() {
+
+  }
+
+  delete() {
+
+  }
+
+  breadthFirstSearch() {
+
+  }
+
+  depthFirstPreOrderSearch() {
+
+  }
+
+  depthFirstPostOrderSearch() {
+
+  }
+
+  depthFirstInOrderSearch() {
+
+  }
 }
 
 
-module.exports = BinarySearchTree;
+module.exports = { BinarySearchTree, Node };
