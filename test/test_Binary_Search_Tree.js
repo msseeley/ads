@@ -9,9 +9,9 @@ describe("Binary Search Tree", () => {
       expect(bst).to.have.property('root');
     });
 
-    it("contains the following methods: 'insert', 'find', 'delete', 'breadthFirstSearch', 'depthFirstPreOrderSearch', 'depthFirstPostOrderSearch', 'depthFirstInOrderSearch'", () => {
+    it("contains the following methods: 'insert', 'contains', 'delete', 'breadthFirstSearch', 'depthFirstPreOrderSearch', 'depthFirstPostOrderSearch', 'depthFirstInOrderSearch'", () => {
       expect(bst.insert).to.be.a('function');
-      expect(bst.find).to.be.a('function');
+      expect(bst.contains).to.be.a('function');
       expect(bst.delete).to.be.a('function');
       expect(bst.breadthFirstSearch).to.be.a('function');
       expect(bst.depthFirstPreOrderSearch).to.be.a('function');

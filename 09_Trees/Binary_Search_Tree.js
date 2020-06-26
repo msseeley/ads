@@ -29,7 +29,7 @@ class BinarySearchTree {
     return this;
   }
 
-  find() {
+  contains() {
 
   }
 
