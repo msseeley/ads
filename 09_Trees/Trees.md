@@ -44,6 +44,11 @@ Sorting order is everything greater than the root is stored on the right side an
 ## Searching a Binary Tree
 Ordering systm makes insertion and lookup much quicker.
 
+## Breadth First Search
+Visting or searching through nodes based on their level on the tree. Essentially looking at siblings and cousins for each level before moving down.
+
+## Depth First Search
+
 
 
 
