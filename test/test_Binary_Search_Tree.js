@@ -77,16 +77,8 @@ describe("Binary Search Tree", () => {
     const bst = new BinarySearchTree();
     [47, 20, 32, 64, 57, 90, 12, 5].forEach(num => bst.insert(num));
 
-    it("default returns list of all nodes in breadth first order", () => {
+    it("returns list of all nodes in breadth first order", () => {
       expect(bst.breadthFirstSearch()).to.eql([47, 20, 64, 12, 32, 59, 90, 5]);
-    });
-    it("returns the searched for node, if it exists", () => {
-      expect(bst.breadthFirstSearch(12).value).to.equal(12);
-      expect(bst.breadthFirstSearch(12).left.value).to.equal(5);
-      expect(bst.breadthFirstSearch(12).right).to.equal(null);
-    });
-    it("returns undefined if the value is not found", () => {
-      expect(bst.breadthFirstSearch(27)).to.equal(undefined);
     });
   })
 })
