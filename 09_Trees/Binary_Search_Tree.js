@@ -45,7 +45,16 @@ class BinarySearchTree {
   }
 
   breadthFirstSearch() {
-    
+    const queue = [this.root];
+    const visited = [];
+    while (queue.length) {
+      let curr = queue.shift();
+      visited.push(curr.value);
+      if (curr.left) queue.push(curr.left);
+      if (curr.right) queue.push(curr.right);
+      curr = curr.left ? curr.left : curr.right;
+    }
+    return visited;
   }
 
   depthFirstPreOrderSearch() {

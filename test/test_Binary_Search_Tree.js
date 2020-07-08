@@ -73,12 +73,12 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right.value).to.equal(85);
     });
   });
-  describe("breadth first search method", () => {
+  describe.only("breadth first search method", () => {
     const bst = new BinarySearchTree();
     [47, 20, 32, 64, 57, 90, 12, 5].forEach(num => bst.insert(num));
 
     it("returns list of all nodes in breadth first order", () => {
-      expect(bst.breadthFirstSearch()).to.eql([47, 20, 64, 12, 32, 59, 90, 5]);
+      expect(bst.breadthFirstSearch()).to.eql([47, 20, 64, 12, 32, 57, 90, 5]);
     });
   })
 })
