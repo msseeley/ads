@@ -73,7 +73,7 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right.value).to.equal(85);
     });
   });
-  describe("search methods: breadth first search, depth first search (pre-order, post-order, in-order)", () => {
+  describe.only("search methods: breadth first search, depth first search (pre-order, post-order, in-order)", () => {
     /*
               47
           20      64
@@ -88,6 +88,12 @@ describe("Binary Search Tree", () => {
     });
     it("depth first search pre-order returns list of all nodes in preorder", () => {
       expect(bst.depthFirstPreOrderSearch()).to.eql([47, 20, 12, 5, 32, 64, 57, 90]);
+    });
+    it("depth first search post-order returns list of all nodes in preorder", () => {
+      expect(bst.depthFirstPreOrderSearch()).to.eql([5, 12, 32, 20, 57, 90, 64, 47]);
+    });
+    it("depth first search in-order returns list of all nodes in preorder", () => {
+      expect(bst.depthFirstPreOrderSearch()).to.eql([5, 12, 20, 32, 47, 57, 90]);
     });
 
   });
