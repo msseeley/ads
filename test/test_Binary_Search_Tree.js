@@ -88,7 +88,7 @@ describe("Binary Search Tree", () => {
     });
     it("depth first search pre-order returns list of all nodes in preorder", () => {
       expect(bst.depthFirstPreOrderSearch()).to.eql([47, 20, 12, 5, 32, 64, 57, 90]);
-    })
+    });
 
   });
 });

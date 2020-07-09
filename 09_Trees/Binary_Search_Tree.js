@@ -58,7 +58,15 @@ class BinarySearchTree {
   }
 
   depthFirstPreOrderSearch() {
-
+    const values = [];
+    let current = this.root;
+    function traverse(node) {
+      values.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(current);
+    return values;
   }
 
   depthFirstPostOrderSearch() {
