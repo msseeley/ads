@@ -73,12 +73,22 @@ describe("Binary Search Tree", () => {
       expect(bst.root.right.value).to.equal(85);
     });
   });
-  describe.only("breadth first search method", () => {
+  describe("search methods: breadth first search, depth first search (pre-order, post-order, in-order)", () => {
+    /*
+              47
+          20      64
+        12  32  57  90
+      5
+    */
     const bst = new BinarySearchTree();
     [47, 20, 32, 64, 57, 90, 12, 5].forEach(num => bst.insert(num));
 
-    it("returns list of all nodes in breadth first order", () => {
+    it("breadth first search returns list of all nodes in breadth first order", () => {
       expect(bst.breadthFirstSearch()).to.eql([47, 20, 64, 12, 32, 57, 90, 5]);
     });
-  })
-})
+    it("depth first search pre-order returns list of all nodes in preorder", () => {
+      expect(bst.depthFirstPreOrderSearch()).to.eql([47, 20, 12, 5, 32, 64, 57, 90]);
+    })
+
+  });
+});
