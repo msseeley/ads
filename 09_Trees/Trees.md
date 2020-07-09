@@ -48,6 +48,17 @@ Ordering systm makes insertion and lookup much quicker.
 Visting or searching through nodes based on their level on the tree. Essentially looking at siblings and cousins for each level before moving down.
 
 ## Depth First Search
+Visiting or searching through nodes going down the branches in various orders.
+ - PreOrder: parent node, left child, right child
+  - return an order that you could reconstruct the tree at a later time
+ - PostOrder: left child, right child, parent node
+ - InOrder: left child, parent node, right child
+  - returns all the nodes in a sorted order which can be useful
+
+
+## which to use?
+wide trees do better with a depth first search in term of space
+deep trees do better with a breadth first search in terms of space
 
 
 
