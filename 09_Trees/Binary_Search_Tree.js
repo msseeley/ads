@@ -69,14 +69,14 @@ class BinarySearchTree {
   }
 
   depthFirstPostOrderSearch() {
-    // const values = [];
-    // function traverse(node) {
-    //   if (node.left) traverse(node.left);
-    //   if (node.right) traverse(node.right);
-    //   values.push(node.value);
-    // }
-    // traverse(this.root);
-    // return values;
+    const values = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      values.push(node.value);
+    }
+    traverse(this.root);
+    return values;
   }
 
   depthFirstInOrderSearch() {
