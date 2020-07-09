@@ -93,7 +93,7 @@ describe("Binary Search Tree", () => {
       expect(bst.depthFirstPostOrderSearch()).to.eql([5, 12, 32, 20, 57, 90, 64, 47]);
     });
     it("depth first search in-order returns list of all nodes in in-order", () => {
-      expect(bst.depthFirstInOrderSearch()).to.eql([5, 12, 20, 32, 47, 57, 90]);
+      expect(bst.depthFirstInOrderSearch()).to.eql([5, 12, 20, 32, 47, 57, 64, 90]);
     });
 
   });

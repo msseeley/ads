@@ -80,7 +80,14 @@ class BinarySearchTree {
   }
 
   depthFirstInOrderSearch() {
-
+    const values = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      values.push(node.value);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return values;
   }
 }
 
