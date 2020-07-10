@@ -40,8 +40,97 @@ class BinarySearchTree {
     return false;
   }
 
-  delete() {
+  find(value) {
+    let current = this.root;
+    while (current) {
+      if (current.value === value) return current;
+      let dir = current.value > value ? 'left' : 'right';
+      current = current[dir];
+    }
+    throw Error("Node does not exist");
+  }
 
+  parent(node) {
+    let current = this.root;
+    if (current === node) return false;
+    while (current) {
+      if (current.left === node || current.right === node) return current;
+      let dir = current.value > node.value ? 'left' : 'right';
+      current = current[dir];
+    }
+  }
+
+  min(node) {
+    if (!node.left) return node;
+    let current = node.left;
+    while (current) {
+      if (current.left) current = current.left;
+      else break;
+    }
+    return current;
+  }
+
+  max(node) {
+    if (!node.right) return node;
+    let current = node.right;
+    while (current) {
+      if (current.right) current = current.right;
+      else break;
+    }
+    return current;
+  }
+
+  delete(value) {
+    const toRemove = this.find(value);
+    const parent = this.parent(toRemove);
+    const parentPointer = parent && parent.value > toRemove.value ? 'left' : 'right';
+    if (parent && !toRemove.left && !toRemove.right) {
+      parent[parentPointer] = null;
+    }
+    else if (!parent && !toRemove.left && !toRemove.right) {
+      this.root = null;
+    }
+    else if (!parent) {
+      const newRoot = this.root.left ? this.max(this.root.left) : this.min(this.root.right);
+      const newRootParent = this.parent(newRoot);
+      const newRootParentPointer = newRootParent.value > newRoot.value ? 'left' : 'right';
+      if (!newRoot.left && !newRoot.right) {
+        newRootParent[newRootParentPointer] = null;
+      }
+      else {
+        const child = newRoot.left ? newRoot.left : newRoot.right;
+        const newRootPointer = newRoot.left ? 'left' : 'right';
+        newRootParent[newRootParentPointer] = child;
+        newRoot[newRootPointer] = null;
+      }
+      newRoot.left = toRemove.left;
+      newRoot.right = toRemove.right;
+      this.root = newRoot;
+      toRemove.left = null;
+      toRemove.right = null;
+    }
+    else {
+      const childCount = toRemove.left && toRemove.right ? 2 : 1;
+      if (childCount === 1) {
+        const child = toRemove.left ? toRemove.left : toRemove.right;
+        const toRemoveChildPointer = toRemove.left ? 'left' : 'right';
+        parent[parentPointer] = child;
+        toRemove[toRemoveChildPointer] = null;
+      }
+      else {
+        console.log('here again')
+        const replacement = this.min(toRemove.right);
+        const replacementParent = this.parent(replacement);
+        replacementParent.left = replacement.right ? replacement.right : null;
+        replacement.left = toRemove.left;
+        replacement.right = toRemove.right;
+        parent[parentPointer] = replacement;
+        toRemove.left = null;
+        toRemove.right = null;
+      }
+    }
+    // console.log(this);
+    return this;
   }
 
   breadthFirstSearch() {
