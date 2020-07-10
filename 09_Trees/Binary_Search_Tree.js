@@ -118,7 +118,6 @@ class BinarySearchTree {
         toRemove[toRemoveChildPointer] = null;
       }
       else {
-        console.log('here again')
         const replacement = this.min(toRemove.right);
         const replacementParent = this.parent(replacement);
         replacementParent.left = replacement.right ? replacement.right : null;
@@ -129,7 +128,6 @@ class BinarySearchTree {
         toRemove.right = null;
       }
     }
-    // console.log(this);
     return this;
   }
 
