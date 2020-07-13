@@ -41,17 +41,17 @@ class MaxHeap {
     return this.values;
   }
 
-  // extractMax() {
-  //   this.swap(0, this.values.length - 1);
-  //   const max = this.values.pop();
-  //   let idx = 0;
-  //   let leftChildIdx = this.findLeftChildIdx(idx);
-  //   let rightChildIdx = this.findRightChildIdx(idx);
-  //   while (this.values[idx] < this.values[leftChildIdx] || this.values[idx] < this.values[rightChildIdx]) {
-  //     this.values[leftChildIdx] > this.values[rightChildIdx] ? this.swap(leftChildIdx, idx) : this.swap(rightChildIdx, idx);
-  //   }
-  //   return max;
-  // }
+  extractMax() {
+    this.swap(0, this.values.length - 1);
+    const max = this.values.pop();
+    let idx = 0;
+    let leftChildIdx = this.findLeftChildIdx(idx);
+    let rightChildIdx = this.findRightChildIdx(idx);
+    while (this.values[idx] < this.values[leftChildIdx] || this.values[idx] < this.values[rightChildIdx]) {
+      this.values[leftChildIdx] > this.values[rightChildIdx] ? this.swap(leftChildIdx, idx) : this.swap(rightChildIdx, idx);
+    }
+    return max;
+  }
 }
 
 module.exports = MaxHeap;
