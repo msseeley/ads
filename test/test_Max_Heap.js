@@ -34,4 +34,11 @@ describe.only("Max Heap", () => {
     heap.insert(123);
     expect(heap.values[0]).to.equal(123);
   });
+  it("returns the max value while maintaining proper heap structure", () => {
+    const heap = new MaxHeap();
+    [2, 78, 20, 34, 73, 2, 90].forEach(val => heap.insert(val));
+    console.log(heap.values);
+    expect(heap.extractMax()).to.equal(90);
+    expect(heap.values).to.eql([78, 73, 2, 34, 20]);
+  })
 })
