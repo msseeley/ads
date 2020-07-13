@@ -41,13 +41,13 @@ Each node has a max of two children.
 Binary Tree that is sorted in a particular order. Used to store data that can be compared and sorted in a particular fashion. Classically, this is numbers, but could be other things.
 Sorting order is everything greater than the root is stored on the right side and everything less than the root is stored on the left side. Each node's children, in micro, follows this same patter as well.
 
-## Searching a Binary Tree
+### Searching a Binary Tree
 Ordering systm makes insertion and lookup much quicker.
 
-## Breadth First Search
+### Breadth First Search
 Visting or searching through nodes based on their level on the tree. Essentially looking at siblings and cousins for each level before moving down.
 
-## Depth First Search
+### Depth First Search
 Visiting or searching through nodes going down the branches in various orders.
  - PreOrder: parent node, left child, right child
   - return an order that you could reconstruct the tree at a later time
@@ -56,10 +56,15 @@ Visiting or searching through nodes going down the branches in various orders.
   - returns all the nodes in a sorted order which can be useful
 
 
-## which to use?
+### which to use?
 wide trees do better with a depth first search in term of space
 deep trees do better with a breadth first search in terms of space
 
+
+## Min and Max Binary Heaps
+Directional order of parent-child relationship of nodes.
+- Max heap, every parent is larger than child nodes
+- Min heap, every parent is smaller than child nodes
 
 
 
