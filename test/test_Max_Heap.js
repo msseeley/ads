@@ -1,7 +1,7 @@
 const { expect } = require('chai');
-const MaxHeap = require('../09_Trees/MaxHeap');
+const MaxHeap = require('../09_Trees/Max_Heap');
 
-describe("Max Heap", () => {
+describe.only("Max Heap", () => {
   it("inserts values so that parents are greater than children", () => {
     const heap = new MaxHeap();
     [12, 14, 2, 50, 8, 10, 36, 42].forEach(val => heap.insert(val));
