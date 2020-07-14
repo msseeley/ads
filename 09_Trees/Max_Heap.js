@@ -42,13 +42,21 @@ class MaxHeap {
   }
 
   extractMax() {
+    if (this.values.length === 0) return;
+    if (this.values.length === 1) return this.values.pop();
     this.swap(0, this.values.length - 1);
     const max = this.values.pop();
     let idx = 0;
     let leftChildIdx = this.findLeftChildIdx(idx);
     let rightChildIdx = this.findRightChildIdx(idx);
     while (this.values[idx] < this.values[leftChildIdx] || this.values[idx] < this.values[rightChildIdx]) {
-      this.values[leftChildIdx] > this.values[rightChildIdx] ? this.swap(leftChildIdx, idx) : this.swap(rightChildIdx, idx);
+      const leftChildVal = this.values[leftChildIdx];
+      const rightChildVal = this.values[rightChildIdx];
+      const direction = leftChildVal > rightChildVal ? 'left' : 'right';
+      leftChildVal > rightChildVal ? this.swap(leftChildIdx, idx) : this.swap(rightChildIdx, idx);
+      idx = direction === 'left' ? this.findLeftChildIdx(idx) : this.findRightChildIdx(idx);
+      leftChildIdx = this.findLeftChildIdx(idx);
+      rightChildIdx = this.findRightChildIdx(idx);
     }
     return max;
   }
