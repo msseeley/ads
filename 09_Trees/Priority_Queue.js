@@ -24,15 +24,16 @@ class PriorityQueue {
     let parentIdx = Math.floor((idx - 1) / 2);
     let parent = this.values[parentIdx];
     while (idx > 0 && parent.priority > node.priority) {
-      swap(parentIdx, idx);
+      this.swap(parentIdx, idx);
       idx = parentIdx;
       parentIdx = Math.floor((idx - 1) / 2);
+      parent = this.values[parentIdx];
     }
     return this;
   }
 
   peek() {
-    return this.values[0].data;
+    return this.values[0];
   }
 
 
