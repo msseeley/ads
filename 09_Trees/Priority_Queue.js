@@ -40,7 +40,6 @@ class PriorityQueue {
     this.swap(0, this.values.length - 1);
     const dequeued = this.values.pop();
     let idx = 0;
-    // let len = this.values.length - 1
     let leftChildIdx = (2 * idx) + 1;
     let rightChildIdx = (2 * idx) + 2;
     while (((this.values[leftChildIdx] && this.values[idx].priority > this.values[leftChildIdx].priority) || (this.values[rightChildIdx] && this.values[idx].priority > this.values[rightChildIdx].priority))) {

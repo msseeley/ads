@@ -9,7 +9,6 @@ describe.only('Priority Queue', () => {
     pQueue.enqueue("Mina", 3);
     pQueue.enqueue("Ruti", 1);
     pQueue.enqueue("Oliver", 7);
-    console.log(pQueue.values);
     expect(pQueue.peek().data).to.equal("Ruti");
     expect(pQueue.values).to.deep.eql([{ data: "Ruti", priority: 1 }, { data: "Mina", priority: 3 }, { data: "James", priority: 2 }, { data: "Oliver", priority: 7 }])
   });
