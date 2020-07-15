@@ -65,6 +65,8 @@ deep trees do better with a breadth first search in terms of space
 Directional order of parent-child relationship of nodes.
 - Max heap, every parent is larger than child nodes
 - Min heap, every parent is smaller than child nodes
+- insertion and removal is O(logN)
+- search is O(N) not optimized for general search outside of max and min
 
 
 
