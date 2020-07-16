@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { PriorityQueue } = require('../09_Trees/Priority_Queue');
 
-describe.only('Priority Queue', () => {
+describe('Priority Queue', () => {
   it("enqueues nodes based on priority with the highest priority at the root and the lowest at the bottom (lower priority numbers are higher priority value", () => {
     const pQueue = new PriorityQueue();
     pQueue.enqueue("James", 2);
