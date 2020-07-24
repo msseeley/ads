@@ -15,10 +15,25 @@ class HashTable {
     return total;
   }
 
-  set(key) {
+  set(key, value) {
     const location = this.hash(key);
+    const data = [key, value];
+    if (this.keyMap[location] === undefined) {
+      this.keyMap[location] = [];
+    }
+    this.keyMap[location].push(data);
   }
 
+  get(searchKey) {
+    const location = this.hash(searchKey);
+    const bucket = this.keyMap[location]
+    if (bucket === undefined) return;
+    for (const [key, val] of bucket) {
+      if (key === searchKey) {
+        return val;
+      }
+    }
+  }
 }
 
 module.exports = { HashTable };

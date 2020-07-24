@@ -41,6 +41,10 @@ describe.only("set & get methods", () => {
     hT.set('blue', 'azure');
     hT.set('pink', 'salmon');
     expect(hT.get('blue')).to.equal('azure');
-    expect(hT.get('pink')).to.equal('pink');
+    expect(hT.get('pink')).to.equal('salmon');
   });
+  it("get method returns undefined if the key does not exist", () => {
+    const hT = new HashTable(10);
+    expect(hT.get('orange')).to.equal(undefined);
+  })
 });
