@@ -26,7 +26,7 @@ describe("hash function", () => {
     expect(hashTable.hash(key1, arrayLength)).to.not.equal(hashTable.hash(key2, arrayLength))
   })
 });
-describe.only("set & get methods", () => {
+describe("set & get methods", () => {
   it("sets and gets the key based on the hashed value", () => {
     const hT = new HashTable(10);
     hT.set('blue', 'azure');
@@ -36,7 +36,14 @@ describe.only("set & get methods", () => {
     hT.set('green', 'emerald');
     expect(hT.get('green')).to.equal('emerald');
   });
-  it("accommodates collisions with separate chaining", () => {
+  it.only("set method will over-writes existing value when duplicate key is added", () => {
+    const hT = new HashTable(10);
+    hT.set('blue', 'azure');
+    expect(hT.get('blue')).to.equal('azure');
+    hT.set('blue', 'indigo');
+    expect(hT.get('blue')).to.equal('indigo');
+  })
+  it("set method accommodates collisions with separate chaining", () => {
     const hT = new HashTable(10);
     hT.set('blue', 'azure');
     hT.set('pink', 'salmon');
@@ -46,5 +53,9 @@ describe.only("set & get methods", () => {
   it("get method returns undefined if the key does not exist", () => {
     const hT = new HashTable(10);
     expect(hT.get('orange')).to.equal(undefined);
-  })
+  });
 });
+describe("keys & values methods", () => {
+  it("keys method returns an array of all the keys", () => { });
+  it("values method returns an array of all the values", () => { });
+})

@@ -21,7 +21,15 @@ class HashTable {
     if (this.keyMap[location] === undefined) {
       this.keyMap[location] = [];
     }
-    this.keyMap[location].push(data);
+    if (this.get(key)) {
+      const bucket = this.keyMap[location]
+      for (let i = 0; i < bucket.length; i++) {
+        const k = bucket[i][0];
+        if (k === key) bucket[i][1] = value;
+      }
+    } else {
+      this.keyMap[location].push(data);
+    }
   }
 
   get(searchKey) {
