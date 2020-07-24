@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const { HashTable } = require('../10_Hash_Tables/HashTable');
 
-describe.only("hash function", () => {
+describe("hash function", () => {
   it("returns a number that is less than the length of the overall HashTable", () => {
     const hT = new HashTable(10);
     const key = 'pink';
@@ -26,12 +26,21 @@ describe.only("hash function", () => {
     expect(hashTable.hash(key1, arrayLength)).to.not.equal(hashTable.hash(key2, arrayLength))
   })
 });
-describe("set method", () => {
-  it("sets the key based on the hashed value", () => {
+describe.only("set & get methods", () => {
+  it("sets and gets the key based on the hashed value", () => {
     const hT = new HashTable(10);
-    hT.set("blue");
-    console.log("HT => ", hT);
+    hT.set('blue', 'azure');
+    expect(hT.get('blue')).to.equal('azure');
+    hT.set('yellow', 'canary');
+    expect(hT.get('yellow')).to.equal('canary');
+    hT.set('green', 'emerald');
+    expect(hT.get('green')).to.equal('emerald');
   });
   it("accommodates collisions with separate chaining", () => {
+    const hT = new HashTable(10);
+    hT.set('blue', 'azure');
+    hT.set('pink', 'salmon');
+    expect(hT.get('blue')).to.equal('azure');
+    expect(hT.get('pink')).to.equal('pink');
   });
 });

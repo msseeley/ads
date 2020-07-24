@@ -17,7 +17,6 @@ class HashTable {
 
   set(key) {
     const location = this.hash(key);
-    console.log('location', location)
   }
 
 }
