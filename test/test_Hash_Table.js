@@ -36,7 +36,7 @@ describe("set & get methods", () => {
     hT.set('green', 'emerald');
     expect(hT.get('green')).to.equal('emerald');
   });
-  it.only("set method will over-writes existing value when duplicate key is added", () => {
+  it("set method will over-writes existing value when duplicate key is added", () => {
     const hT = new HashTable(10);
     hT.set('blue', 'azure');
     expect(hT.get('blue')).to.equal('azure');
@@ -55,7 +55,15 @@ describe("set & get methods", () => {
     expect(hT.get('orange')).to.equal(undefined);
   });
 });
-describe("keys & values methods", () => {
-  it("keys method returns an array of all the keys", () => { });
-  it("values method returns an array of all the values", () => { });
+describe.only("keys & values methods", () => {
+  const hT = new HashTable(10);
+  hT.set('orange', 'narangi');
+  hT.set('white', 'safed');
+  hT.set('green', 'hara');
+  it("keys method returns an array of all the keys", () => {
+    expect(hT.keys()).to.eql(['orange', 'white', 'green']);
+  });
+  it("values method returns an array of all the values", () => {
+    expect(hT.values()).to.eql(['narangi', 'safed', 'hara']);
+  });
 })

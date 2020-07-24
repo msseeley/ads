@@ -42,6 +42,26 @@ class HashTable {
       }
     }
   }
+
+  keys() {
+    const keys = [];
+    for (const bucket of this.keyMap) {
+      if (bucket) {
+        bucket.forEach(data => keys.push(data[0]));
+      }
+    }
+    return keys;
+  }
+
+  values() {
+    const values = [];
+    for (const bucket of this.keyMap) {
+      if (bucket) {
+        bucket.forEach(data => values.push(data[1]));
+      }
+    }
+    return values;
+  }
 }
 
 module.exports = { HashTable };
