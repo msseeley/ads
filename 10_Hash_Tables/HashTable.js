@@ -4,13 +4,13 @@ class HashTable {
   constructor() {
     this.keyMap = [];
   }
-  hash(key, length) {
+  hash(key) {
     let total = 0;
     const prime = 31; //prime numbers decrease collisions
     for (let i = 0; i < Math.min(key.length, 100); i++) {
       const char = key[i];
       const value = char.charCodeAt(0) - 96;
-      total += (total * prime + value) % length;
+      total += (total * prime + value) % this.keyMap.length;
     }
     return total;
   }
