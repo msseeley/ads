@@ -13,3 +13,7 @@ Hash functions should be fast to run and distributes values uniformly, avoides c
 - Two common ways in storage of dealing with them are **Linear Probing** and **Separate Chaining**
 - Linear Probing: Store the data at the next available spot.
 - Separate Chaining: Storing the key value pairs at the same spot (ie in an array or linked list).
+
+## Time
+- generally have constant time O(1) for insertion, deletion, and access.
+- efficiency is generally based on the quality of the hash function.
