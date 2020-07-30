@@ -55,7 +55,7 @@ describe("set & get methods", () => {
     expect(hT.get('orange')).to.equal(undefined);
   });
 });
-describe.only("keys & values methods", () => {
+describe("keys & values methods", () => {
   const hT = new HashTable(10);
   hT.set('orange', 'narangi');
   hT.set('white', 'safed');
