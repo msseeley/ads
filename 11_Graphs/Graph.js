@@ -2,7 +2,10 @@ class Graph {
   constructor() {
     this.adjacencyList = {};
   }
-  insertVertex() { };
+  insertVertex(vertex) {
+    this.adjacencyList[vertex] = [];
+    return this;
+  };
 }
 
 

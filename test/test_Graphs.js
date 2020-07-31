@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const Graph = require('../11_Graphs/Graph');
 
 
-describe.only("Graph", () => {
+describe.only("Undirected Graph", () => {
   it("Inserts a Vertex", () => {
     const graph = new Graph();
     expect(graph.adjacencyList).to.eql({});
