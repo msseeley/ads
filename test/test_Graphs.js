@@ -16,8 +16,37 @@ describe.only("Undirected Graph", () => {
     graph.insertVertex('A');
     graph.insertVertex('B');
     graph.insertEdge('A', 'B');
-    expect(graph.adjacencyList).to.eql({ A: ['B'], B: ['A'] });
+    expect(graph.adjacencyList).to.eql({ 'A': ['B'], 'B': ['A'] });
   });
-  xit("Removes a Vertex", () => { });
-  xit("Removes an Edge", () => { });
+  it("Removes an Edge", () => {
+    const graph = new Graph();
+    graph.insertVertex('A');
+    graph.insertVertex('B');
+    graph.insertVertex('C');
+    graph.insertEdge('A', 'B');
+    graph.insertEdge('B', 'C');
+    graph.removeEdge('B', 'C');
+    expect(graph.adjacencyList).to.eql({ 'A': ['B'], 'B': ['A'], 'C': [] });
+  });
+
+  it("Removes a Vertex", () => {
+    const graph = new Graph();
+    graph.insertVertex('C');
+    graph.insertVertex('D');
+    graph.insertVertex('E');
+    graph.insertVertex('F');
+    graph.insertVertex('G');
+    graph.insertEdge('C', 'D');
+    graph.insertEdge('D', 'E');
+    graph.insertEdge('E', 'F');
+    graph.insertEdge('F', 'G');
+    graph.insertEdge('G', 'C');
+    graph.removeVertex('C')
+    expect(graph.adjacencyList).to.eql({
+      'D': ['E'],
+      'E': ['D', 'F'],
+      'F': ['E', 'G'],
+      'G': ['F']
+    });
+  });
 });
